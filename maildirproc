@@ -551,7 +551,7 @@ class MaildirProcessor(object):
                     break
             for maildir in self._maildirs:
                 maildir_path = os.path.join(self._maildir_base, maildir)
-                for subdir in ["cur", "new"]:
+                for subdir in ["new"]:
                     subdir_path = os.path.join(maildir_path, subdir)
                     cur_mtime = os.path.getmtime(subdir_path)
                     if cur_mtime != mtime_map.setdefault(subdir_path, 0):
